@@ -55,3 +55,7 @@ body {
     /* make rows evenly distributed */
     flex: 1;
   }
+
+ #container.backgroundChamged {
+    background-color: red;
+  }

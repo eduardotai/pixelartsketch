@@ -27,12 +27,35 @@ function addGridSize(size) {
             cell.style.background = 'white';
             cell.style.border = '1px solid black';
             container.appendChild(cell);
+
+
+            ["click", 'mousedown', 'mousemove', 'mouseup'].forEach(ev=>{
+                cell.addEventListener(ev, function(e){
+                   if(ev=="click"){
+                    cell.style.background = 'red'
+                   }
+
+                   cell.addEventListener('mousemove', function(event) {
+                    if(event.buttons == 1) {
+                     event.preventDefault();
+                        cell.style.background = 'red'
+                    }
+                   });
+                   
+            });
+                });
         }
-    }
+    }  
+    
 }
+
+
+
 
 if ([16, 32, 64].includes(answer)) {
     addGridSize(answer);
 } else {
     alert("Invalid size. Please enter either 16, 32, or 64.");
 }
+
+
