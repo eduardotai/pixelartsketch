@@ -10,14 +10,15 @@ body {
     height: 100vh;
 }
 
-.container {
+#container {
     margin: auto;
-    display: flex;
     align-items: center;
+    display: grid;
     width: 600px;
     height: 600px;
     background-color: white;
     border: 1px solid white;
+    grid-template-columns: repeat(1 1fr);
 }
 
 
@@ -40,3 +41,17 @@ body {
     background-color: #77b1a9;
     margin: auto;
 }
+
+#containee>div {
+    height: auto;
+    flex: 1 0 auto;
+  
+    /* make columns vertical flexboxes */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .sketch-screen>div>* {
+    /* make rows evenly distributed */
+    flex: 1;
+  }
